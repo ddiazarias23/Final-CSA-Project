@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int grid[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    string name1;
+    string name2;
+    cout << "Enter the first player's name\n";
+    cin >> name1;
+    cout << "Enter the second player's name\n";
+    cin >> name2;
+    cout << name1 << " will have the first turn\n";
+    cout << name1 << " will have the second turn\n";
+
+    cout << "   |    |   \n";
+    cout << "___|____|___\n";
+    cout << "   |    |   \n";
+    cout << "___|____|___\n";
+    cout << "   |    |   \n";
+    cout << "   |    |   \n";
+}
