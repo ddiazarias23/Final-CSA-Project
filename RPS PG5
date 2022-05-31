@@ -1,0 +1,63 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+//Function Types
+
+
+//Function Definitions
+void computerChoice(int & c_choice) {
+    const int MAX_VALUE = 3;
+    const int MIN_VALUE = 1;
+    c_choice = (rand() % (MAX_VALUE - MIN_VALUE + 1) + MIN_VALUE);
+}
+ void userChoice(int & u_choice) {
+
+    int choice;
+    cout << "Please enter choice \n";
+    cin >> choice;
+
+    while(choice < 1 || choice > 3){
+        cout << "Remember \n";
+        break;
+    }
+
+
+}
+int main() {
+
+    //variables
+    int c_choice = 0;
+    int u_choice = 0;
+
+    //Allows the random function to run but needs the "includes" in lines 2-3
+    srand(time(0));
+
+    //Sets the rules and how one could win/lose
+    cout << "\n Rules\n";
+    cout << "1 = Rock\n";
+    cout << "2 = Paper \n";
+    cout << "3 = Scissors \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+    cout << "Rock (1) beats Scissors (3) \n";
+    cout << "Scissors (3) beats Paper (2) \n";
+    cout << "Paper (2) beats Rock (1) \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+    cout << "Its you vs the computer. First to three WINS! \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+    cout << "Let the Games Begin!! \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+
+
+    //User choice function
+    userChoice(u_choice);
+
+    //Simulate computer choice function
+    computerChoice(c_choice);
+    cout << c_choice << endl;
+
+
+
+    return 0;
+}
