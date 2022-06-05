@@ -1,0 +1,165 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+
+
+using namespace std;
+
+//variables
+int c_choice = 0;
+int u_choice = 0;
+
+const int ROCK = 1;
+const int PAPER = 2;
+const int SCISSORS = 3;
+
+
+
+
+//Function Definitions
+void computerChoice(int & c_choice) {
+
+    const int MAX_VALUE = 3;
+    const int MIN_VALUE = 1;
+    c_choice = (rand() % (MAX_VALUE - MIN_VALUE + 1) + MIN_VALUE);
+    
+}
+ void userChoice(int & u_choice) {
+
+     int choice;
+     cout << "Please enter choice \n";
+     cin >> choice;
+
+     while (choice < 1 || choice > 3) {
+         cout << "Remember \n";
+         cout << "- - - - - - - - - - - - - - - \n";
+         cout << "1 = Rock\n";
+         cout << "2 = Paper \n";
+         cout << "3 = Scissors \n";
+         cout << "- - - - - - - - - - - - - - - \n";
+         cout << "Please enter choice \n";
+         cin >> choice;
+
+     }
+     u_choice = choice;
+ }
+
+     void showChoices(int &, int &) {
+
+         cout << "\n You Picked: " ;
+         if (u_choice == 1){
+             cout << "Rock";
+         }
+         if (u_choice == 2){
+             cout << "Paper";
+         }
+         if (u_choice == 3){
+             cout << "Scissors";
+         }
+
+
+         cout << "\n Computer Picked: ";
+
+
+
+
+     }
+
+     void winner (int u_choice, int c_choice ){
+
+        if (u_choice == c_choice){
+            cout << "\n Its a tie... go again. \n";
+            
+         //include a play again feature here   
+        }
+
+        else if(u_choice == ROCK)
+        {
+            if (c_choice == PAPER) {
+                cout << "Computer Wins Round!\nsince Paper beats Rock \n";
+            }
+            else if(c_choice == SCISSORS){
+                  cout << "You WIN Round!\nsince Rock beats Scissors \n";
+                }
+            }
+
+        else if (u_choice == PAPER)
+        {
+            if (c_choice == SCISSORS){
+                cout << "Computer Wins Round!\nsince Scissors beats Paper \n";
+            }
+            else if (c_choice == ROCK){
+                    cout << "You WIN Round!\nsince Paper beats Rock \n";
+                }
+            }else if (u_choice == SCISSORS)
+         {
+             if (c_choice == ROCK){
+                cout << "Computer Wins Round!\nsince Rock beats Scissors \n";
+             }
+             else if(c_choice == PAPER){
+                     cout << "You WIN Round!\nsince Scissors beats Paper \n";
+                 }
+             }
+         }
+
+
+
+int main() {
+
+
+
+
+    //Allows the random function to run but needs the "includes" in lines 2-3
+    srand(time(0));
+
+    //Sets the rules and how one could win/lose
+    cout << "\n Rules\n";
+    cout << "1 = Rock\n";
+    cout << "2 = Paper \n";
+    cout << "3 = Scissors \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+    cout << "Rock (1) beats Scissors (3) \n";
+    cout << "Scissors (3) beats Paper (2) \n";
+    cout << "Paper (2) beats Rock (1) \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+    cout << "Its you vs the computer. First to three WINS! \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+    cout << "Let the Games Begin!! \n";
+    cout << "- - - - - - - - - - - - - - - \n";
+
+
+    //User choice function
+    userChoice(u_choice);
+
+    showChoices(u_choice, c_choice);
+
+
+    //Simulate computer choice function
+    computerChoice(c_choice);
+    cout << c_choice;
+    if (c_choice == 1){
+        cout << " = Rock";
+        cout << "\n- - - - - - - - - - - - - - - \n";
+    }
+    if (c_choice == 2){
+        cout << " = Paper";
+        cout << "\n- - - - - - - - - - - - - - -\n";
+    }
+    if (c_choice == 3){
+        cout << " = Scissors";
+        cout << "\n- - - - - - - - - - - - - - - \n";
+    }
+
+    winner(u_choice, c_choice);
+
+
+
+    return 0;
+}
+
+
+
+
+
+
