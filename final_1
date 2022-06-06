@@ -1,0 +1,84 @@
+#include <iostream>
+#include "numberGuesser.h"
+#include "rps.h"
+#include "tictactoe.h"
+
+using namespace std;
+
+int main() {
+    int userChoice;
+    cout<<"Welcome to the Game Center\n";
+    cout<<"Select Your Game:\n";
+    cout<<"1 - Number Guesser\n" << "2 - Tic Tac Toe\n" << "3 - Rock Paper Scissors\n";
+    cin >> userChoice;
+    while(userChoice > 3 || userChoice < 1){
+        cout<<"Remember the options:\n  1 for Number Guesser\n2 for Tic TacToe\n3 for Rock Paper Scissors";
+    }
+    if(userChoice == 1){
+        playGame();
+    }else if(userChoice == 2){
+        playTTT();
+    }else if(userChoice == 3){
+        playrps();
+    }else{
+        cout<<"Wrong input";
+    }
+
+}
+//rps.h
+#ifndef FINALPROJECT_RPS_H
+#define FINALPROJECT_RPS_H
+
+void computerChoice(int & c_choice);
+void userChoice(int & u_choice);
+void showChoices(int &, int &);
+void winner (int u_choice, int c_choice );
+void playAgain();
+void playrps();
+
+class rps {
+
+};
+
+
+#endif //FINALPROJECT_RPS_H
+
+//--------
+//ttt.h
+#ifndef FINALPROJECT_TICTACTOE_H
+#define FINALPROJECT_TICTACTOE_H
+
+void intro();
+void board();
+void func2();
+bool func3();
+void playGames();
+void playTTT();
+
+
+class tictactoe {
+};
+
+
+#endif //FINALPROJECT_TICTACTOE_H
+
+//--------
+//numberguesser.h
+
+#ifndef FINALPROJECT_NUMBERGUESSER_H
+#define FINALPROJECT_NUMBERGUESSER_H
+#include <iostream>
+#include <cstdlib>
+
+void restrictions();
+void game();
+void playGame();
+
+
+class numberGuesser {
+
+};
+
+
+#endif //FINALPROJECT_NUMBERGUESSER_H
+
